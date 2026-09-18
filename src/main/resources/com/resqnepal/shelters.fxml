@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="768.0" prefWidth="804.0" spacing="20.0" style="-fx-background-color: #f4f6f7;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.resqnepal.controller.ShelterController">
+   <padding>
+      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+   </padding>
+   <children>
+      <Label text="Shelter Management" textFill="#2c3e50">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <VBox spacing="10.0" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 0);">
+         <children>
+            <Label text="Add New Shelter" textFill="#34495e">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <HBox spacing="15.0">
+               <children>
+                  <TextField fx:id="nameField" promptText="Shelter Name" HBox.hgrow="ALWAYS" />
+                  <TextField fx:id="maxCapacityField" prefWidth="120.0" promptText="Max Capacity" />
+               </children>
+            </HBox>
+            <HBox spacing="15.0">
+               <children>
+                  <TextField fx:id="locXField" prefWidth="100.0" promptText="Location X" />
+                  <TextField fx:id="locYField" prefWidth="100.0" promptText="Location Y" />
+                  <CheckBox fx:id="medicalCheck" mnemonicParsing="false" text="Medical Support" />
+                  <CheckBox fx:id="foodCheck" mnemonicParsing="false" text="Food Available" />
+                  <CheckBox fx:id="waterCheck" mnemonicParsing="false" text="Water Available" />
+               </children>
+            </HBox>
+            <HBox spacing="10.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#addShelter" style="-fx-background-color: #27ae60; -fx-text-fill: white;" text="Add Shelter" />
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+      <HBox alignment="CENTER_LEFT" spacing="15.0">
+         <children>
+            <Label text="Available Shelters" textFill="#34495e">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#admitPeople" style="-fx-background-color: #e67e22; -fx-text-fill: white;" text="Admit People" />
+            <Button mnemonicParsing="false" onAction="#refreshTable" style="-fx-background-color: #3498db; -fx-text-fill: white;" text="Refresh List" />
+         </children>
+      </HBox>
+      <TableView fx:id="shelterTable" prefHeight="350.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+        <columns>
+          <TableColumn fx:id="idCol" prefWidth="90.0" text="Shelter ID" />
+          <TableColumn fx:id="nameCol" prefWidth="150.0" text="Name" />
+            <TableColumn fx:id="maxCapCol" prefWidth="90.0" text="Max Capacity" />
+            <TableColumn fx:id="currentOccCol" prefWidth="90.0" text="Occupancy" />
+            <TableColumn fx:id="availCapCol" prefWidth="90.0" text="Available" />
+            <TableColumn fx:id="medicalCol" prefWidth="70.0" text="Medical" />
+            <TableColumn fx:id="foodCol" prefWidth="70.0" text="Food" />
+            <TableColumn fx:id="waterCol" prefWidth="70.0" text="Water" />
+        </columns>
+      </TableView>
+   </children>
+</VBox>
