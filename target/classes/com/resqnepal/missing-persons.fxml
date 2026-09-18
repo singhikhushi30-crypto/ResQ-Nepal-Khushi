@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="768.0" prefWidth="804.0" spacing="20.0" style="-fx-background-color: #f4f6f7;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.resqnepal.controller.MissingPersonController">
+   <padding>
+      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+   </padding>
+   <children>
+      <Label text="Missing Persons" textFill="#2c3e50">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <VBox spacing="10.0" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 0);">
+         <children>
+            <Label text="Register Missing Person" textFill="#34495e">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <HBox spacing="15.0">
+               <children>
+                  <TextField fx:id="nameField" promptText="Full Name" HBox.hgrow="ALWAYS" />
+                  <TextField fx:id="locationField" promptText="Last Known Location" HBox.hgrow="ALWAYS" />
+                  <ComboBox fx:id="statusComboBox" prefWidth="150.0" promptText="Status" />
+               </children>
+            </HBox>
+            <HBox spacing="10.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#registerPerson" style="-fx-background-color: #27ae60; -fx-text-fill: white;" text="Register Person" />
+                  <Button mnemonicParsing="false" onAction="#updateStatus" style="-fx-background-color: #f39c12; -fx-text-fill: white;" text="Update Status" />
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+      <HBox alignment="CENTER_LEFT" spacing="15.0">
+         <children>
+            <Label text="Records" textFill="#34495e">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="searchField" promptText="Search by Name" />
+            <Button mnemonicParsing="false" onAction="#searchPerson" style="-fx-background-color: #8e44ad; -fx-text-fill: white;" text="Search" />
+            <Button mnemonicParsing="false" onAction="#refreshTable" style="-fx-background-color: #3498db; -fx-text-fill: white;" text="Refresh List" />
+         </children>
+      </HBox>
+      <TableView fx:id="personTable" prefHeight="350.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+        <columns>
+          <TableColumn fx:id="idCol" prefWidth="120.0" text="Record ID" />
+          <TableColumn fx:id="nameCol" prefWidth="200.0" text="Name" />
+            <TableColumn fx:id="locCol" prefWidth="200.0" text="Last Known Location" />
+            <TableColumn fx:id="statusCol" prefWidth="150.0" text="Status" />
+        </columns>
+      </TableView>
+   </children>
+</VBox>

@@ -1,0 +1,6 @@
+com\resqnepal\service\ResourceServiceTest.class
+com\resqnepal\service\MissingPersonServiceTest.class
+com\resqnepal\service\TeamServiceTest.class
+com\resqnepal\service\DisasterServiceTest.class
+com\resqnepal\service\RescueServiceTest.class
+com\resqnepal\service\ShelterServiceTest.class
